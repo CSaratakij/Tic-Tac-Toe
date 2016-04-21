@@ -13,11 +13,6 @@ Window
 3. Run this program : `python main.py`
 
 
-##Test Environment
-- Python3.4.4
-- Kivy 1.9.1
-
-
 ##ToDo
 - [ ] Add sounds
 - [ ] Skin UI
