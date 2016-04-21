@@ -13,7 +13,7 @@ Window
 3. Run this program : `python main.py`
 
 
-##ToDo
+##TODO
 - [ ] Add sounds
 - [ ] Skin UI
 - [x] Single Player
