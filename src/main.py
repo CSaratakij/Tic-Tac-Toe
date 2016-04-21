@@ -174,17 +174,19 @@ class TicTacToeGame(Widget):
 			self.set_all_button_disable(True)
 			
 			boxLayout = BoxLayout(orientation = "vertical")
+
 			dlgGameOver = Popup(title = "GameOver",
-							size_hint = (None, None),
-							size = (400, 400),
-							auto_dismiss = False)
-			
-			
+					size_hint = (None, None),
+					size = (400, 400),
+					auto_dismiss = False)
+
+
 			lblWinner = Label(text = "Winner is : ")
-			
+
 			btnRestart = Button(text = "Restart")
 			btnRestart.bind(on_press = self.restart_game)
 			btnRestart.bind(on_release = dlgGameOver.dismiss)
+			
 			
 			btnExit = Button(text = "Exit")
 			btnExit.bind(on_release = App.get_running_app().stop)
