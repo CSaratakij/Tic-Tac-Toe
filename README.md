@@ -1,13 +1,27 @@
 #Tic-Tac-Toe
 - Require Kivy 1.9.1
 
+#To install all require dependencies
+
+1. Ensure you have the lastest pip and wheel :  
+
+    python -m pip install --upgrade pip wheel setuptools
+
+
+2. Install via requirement.txt :
+
+    pip install -r requirements.txt
+
+
+3. That's it. You're ready to run this program.
+
 
 #To run this program
 Just run Python in directory : "src/main.py"
 
     python main.py
 
-        
+
 #Test Environment
 - Python3.4.4
 - Kivy 1.9.1
