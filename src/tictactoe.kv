@@ -1,0 +1,64 @@
+<GameButton@Button>:
+    siz_hint_x: None
+    width: 200
+    font_size: 100
+    
+    
+<GameLayout@GridLayout>:
+    cols: 3
+    row_force_default: True
+    col_default_width: 200
+    row_default_height: 200
+    pos_hint: { "center_x": 0.5 }
+    size_hint: None, None
+    size: self.minimum_size
+    top: self.height
+
+
+<TicTacToeGame>:
+    GameLayout:
+        GameButton:
+            id: btn1
+            on_press: root.button_press(btn1)
+            on_release: root.button_release(btn1)
+       
+        GameButton:
+            id: btn2
+            on_press: root.button_press(btn2)
+            on_release: root.button_release(btn2)
+        
+        GameButton:
+            id: btn3
+            on_press: root.button_press(btn3)
+            on_release: root.button_release(btn3)
+        
+        GameButton:
+            id: btn4
+            on_press: root.button_press(btn4)
+            on_release: root.button_release(btn4)
+
+        GameButton:
+            id: btn5
+            on_press: root.button_press(btn5)
+            on_release: root.button_release(btn5)
+            
+        GameButton:
+            id: btn6
+            on_press: root.button_press(btn6)
+            on_release: root.button_release(btn6)
+
+        GameButton:
+            id: btn7
+            on_press: root.button_press(btn7)
+            on_release: root.button_release(btn7)
+            
+        GameButton:
+            id: btn8
+            on_press: root.button_press(btn8)
+            on_release: root.button_release(btn8)
+
+        GameButton:
+            id: btn9
+            on_press: root.button_press(btn9)
+            on_release: root.button_release(btn9)
+            
