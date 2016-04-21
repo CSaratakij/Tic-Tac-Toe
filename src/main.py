@@ -17,8 +17,8 @@ class TicTacToeGame(Widget):
 
 	isGameOver = False
 	
-	player = Actor("Player", False)
-	enemy = Actor("Computer", True)
+	player = Actor("Player", False, "X")
+	enemy = Actor("Computer", True, "O")
 	
 	lstAvailableChoice = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 	dictIndexToButtonName = { 1: "btn1", 2: "btn2", 3: "btn3", 4: "btn4", 5: "btn5", 6: "btn6", 7: "btn7", 8: "btn8", 9: "btn9" }
@@ -82,8 +82,8 @@ class TicTacToeGame(Widget):
 	def restart_game(self, btn):
 		
 		self.isGameOver = False
-		self.player = Actor("Player", False)
-		self.enemy = Actor("Enemy", True)
+		self.player = Actor("Player", False, "X")
+		self.enemy = Actor("Enemy", True, "O")
 		self.lstAvailableChoice = list(self.dictIndexToButtonName.keys())
 		
 		self.player.start_first()
@@ -129,7 +129,7 @@ class TicTacToeGame(Widget):
 			self.player.lstSelectedNum.append(selectedNum)
 			self.lstAvailableChoice.remove(selectedNum)
 			
-			btn.text = "X"
+			btn.text = self.player.marking
 			btn.disabled = True
 			
 			
@@ -152,7 +152,7 @@ class TicTacToeGame(Widget):
 				self.enemy.lstSelectedNum.append(selectedNum)
 				self.lstAvailableChoice.remove(selectedNum)
 				
-				self.ids[ self.dictIndexToButtonName[selectedNum] ].text = "O"
+				self.ids[ self.dictIndexToButtonName[selectedNum] ].text = self.enemy.marking
 				self.ids[ self.dictIndexToButtonName[selectedNum] ].disabled = True
 			
 			
