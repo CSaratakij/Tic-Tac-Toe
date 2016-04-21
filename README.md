@@ -11,10 +11,25 @@ Window
 
 
 ##Getting Started
+####Window
 1. Ensure you have the lastest pip and wheel : `python -m pip install --upgrade pip wheel setuptools`
-2. Install dependencies : `pip install -r requirements.txt`
-3. Run this program : `python main.py`
+2. Install dependencies : `pip install -r window_requirements.txt`
 
+###Ubuntu
+1. Add the PPA : `sudo add-apt-repository ppa:kivy-team/kivy`
+2. Update packages list : `sudo apt-get update`
+3. Install Kivy :
+  
+- Python2 : `sudo apt-get install python-kivy`
+- Python3 : `sudo apt-get install python3-kivy` 
+
+###Use another OS?:
+- Please read the installation guide [here](https://kivy.org/#download)
+
+##Run the program : 
+```
+python main.py`
+```
 
 ##TODO
 - [ ] Add sounds
