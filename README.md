@@ -1,4 +1,7 @@
 #Tic-Tac-Toe
+
+![Version 1.0](screenshot/ver1_0.gif)
+
 Simple Tic-Tac-Toe with Kivy
 
 
