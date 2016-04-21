@@ -24,3 +24,7 @@
 
 #ToDo
     - [ ] Add sounds
+    - [ ] Skin UI
+    - [x] Single Player
+    - [ ] Local Multiplayer
+    - [ ] Online Multiplayer
