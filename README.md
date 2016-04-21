@@ -19,17 +19,20 @@ Window
 1. Add the PPA : `sudo add-apt-repository ppa:kivy-team/kivy`
 2. Update packages list : `sudo apt-get update`
 3. Install Kivy :
-  
+
 - Python2 : `sudo apt-get install python-kivy`
 - Python3 : `sudo apt-get install python3-kivy` 
+
 
 ###Use another OS?:
 - Please read the installation guide [here](https://kivy.org/#download)
 
-##Run the program : 
+
+##To run this program :
 ```
 python main.py`
 ```
+
 
 ##TODO
 - [ ] Add sounds
