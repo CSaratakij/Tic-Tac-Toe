@@ -2,7 +2,6 @@ import random
 
 class Actor:
 
-
     def __init__(self, name, isBot):
         self.name = name
         self.isBot = isBot
