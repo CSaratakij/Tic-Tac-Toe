@@ -17,12 +17,12 @@
     - Kivy 1.9.1
     
 #Important
-
-    - for Window user
-        kivy doesn't support Python3.5 for now
-        more info -> https://kivy.org/docs/installation/installation-windows.html#install-win-dist
+    
+    for Window user
+        Kivy doesn't support Python3.5 for now [More Info](https://kivy.org/docs/installation/installation-windows.html#install-win-dist)
 
 #ToDo
+
     - [ ] Add sounds
     - [ ] Skin UI
     - [x] Single Player
