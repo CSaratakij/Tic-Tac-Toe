@@ -25,7 +25,7 @@ Window
 
 
 ###Use another OS?:
-- Please read the installation guide [here](https://kivy.org/#download)
+- Please read the installation guide [here](https://kivy.org/#download).
 
 
 ##To run this program :
