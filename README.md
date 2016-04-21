@@ -4,7 +4,7 @@
 #To run this program
     just run python in src/main.py
     
-    ##command:
+    command:
         python main.py
         
 #Test Environment
