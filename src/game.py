@@ -31,15 +31,6 @@ class Game:
         return self._dictIndexToButtonName
 
 
-    @isStart.setter
-    def isStart(self, value):
-        self._isStart = value
-
-    @isOver.setter
-    def isOver(self, value):
-        self._isOver = value
-
-
     def add_player(self, lstPlayer):
         
         for player in lstPlayer:
