@@ -18,6 +18,8 @@ from kivy.uix.popup import Popup
 
 class TicTacToeGame(Widget):
 
+	dictIndexToButtonName = { 1: "btn1", 2: "btn2", 3: "btn3", 4: "btn4", 5: "btn5", 6: "btn6", 7: "btn7", 8: "btn8", 9: "btn9" }
+	
 	game = Game()
 	player = Player("Player", "X")
 	enemy = Bot("Computer", "O")
@@ -30,14 +32,14 @@ class TicTacToeGame(Widget):
 
 	def set_all_button_disable(self, isDisable):
 		
-		for index in range(1, len(self.game.dictIndexToButtonName) + 1):
-			self.ids[ self.game.dictIndexToButtonName[index] ].disabled = isDisable
+		for index in range(1, len(self.dictIndexToButtonName) + 1):
+			self.ids[ self.dictIndexToButtonName[index] ].disabled = isDisable
   
 
 	def set_all_button_text(self, value):
 		
-		for index in range(1, len(self.game.dictIndexToButtonName) + 1):
-			self.ids[ self.game.dictIndexToButtonName[index] ].text = value
+		for index in range(1, len(self.dictIndexToButtonName) + 1):
+			self.ids[ self.dictIndexToButtonName[index] ].text = value
 		
 		
 	def restart_game(self, btn):
@@ -61,31 +63,31 @@ class TicTacToeGame(Widget):
 			
 			selectedNum = 0
 		
-			if (btn == self.ids[ self.game.dictIndexToButtonName[1] ]):
+			if (btn == self.ids[ self.dictIndexToButtonName[1] ]):
 				selectedNum = 1
 		
-			elif (btn == self.ids[ self.game.dictIndexToButtonName[2] ]):
+			elif (btn == self.ids[ self.dictIndexToButtonName[2] ]):
 				selectedNum = 2
 			
-			elif (btn == self.ids[ self.game.dictIndexToButtonName[3] ]):
+			elif (btn == self.ids[ self.dictIndexToButtonName[3] ]):
 				selectedNum = 3
 		
-			elif (btn == self.ids[ self.game.dictIndexToButtonName[4] ]):
+			elif (btn == self.ids[ self.dictIndexToButtonName[4] ]):
 				selectedNum = 4
 		
-			elif (btn == self.ids[ self.game.dictIndexToButtonName[5] ]):
+			elif (btn == self.ids[ self.dictIndexToButtonName[5] ]):
 				selectedNum = 5
 		
-			elif (btn == self.ids[ self.game.dictIndexToButtonName[6] ]):
+			elif (btn == self.ids[ self.dictIndexToButtonName[6] ]):
 				selectedNum = 6
 		
-			elif (btn == self.ids[ self.game.dictIndexToButtonName[7] ]):
+			elif (btn == self.ids[ self.dictIndexToButtonName[7] ]):
 				selectedNum = 7
 		
-			elif (btn == self.ids[ self.game.dictIndexToButtonName[8] ]):
+			elif (btn == self.ids[ self.dictIndexToButtonName[8] ]):
 				selectedNum = 8
 		
-			elif (btn == self.ids[ self.game.dictIndexToButtonName[9] ]):
+			elif (btn == self.ids[ self.dictIndexToButtonName[9] ]):
 				selectedNum = 9
 
 
@@ -114,8 +116,8 @@ class TicTacToeGame(Widget):
 				self.enemy.lstSelectedNum.append(selectedNum)
 				self.game.lstAvailableChoice.remove(selectedNum)
 				
-				self.ids[ self.game.dictIndexToButtonName[selectedNum] ].text = self.enemy.marking
-				self.ids[ self.game.dictIndexToButtonName[selectedNum] ].disabled = True
+				self.ids[ self.dictIndexToButtonName[selectedNum] ].text = self.enemy.marking
+				self.ids[ self.dictIndexToButtonName[selectedNum] ].disabled = True
 			
 			
 			self.game.check_winner()

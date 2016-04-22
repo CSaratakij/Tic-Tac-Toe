@@ -7,7 +7,6 @@ class Game:
         self._isOver = False
         self._lstPlayer = []
         self._lstAvailableChoice = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
-        self._dictIndexToButtonName = { 1: "btn1", 2: "btn2", 3: "btn3", 4: "btn4", 5: "btn5", 6: "btn6", 7: "btn7", 8: "btn8", 9: "btn9" }
 
 
     @property
@@ -25,10 +24,6 @@ class Game:
     @property
     def lstAvailableChoice(self):
         return self._lstAvailableChoice
-
-    @property
-    def dictIndexToButtonName(self):
-        return self._dictIndexToButtonName
 
 
     def add_player(self, lstPlayer):
