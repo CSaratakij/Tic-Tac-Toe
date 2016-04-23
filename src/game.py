@@ -92,6 +92,7 @@ class Player:
         self._isTurn = False
         self._lstSelectedNum = []
 
+
     @property
     def name(self):
         return self._name
@@ -111,7 +112,7 @@ class Player:
     @property
     def lstSelectedNum(self):
         return self._lstSelectedNum
-        
+
 
     @marking.setter
     def marking(self, value):
