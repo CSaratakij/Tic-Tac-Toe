@@ -111,15 +111,11 @@ class Player:
     @property
     def lstSelectedNum(self):
         return self._lstSelectedNum
-
+        
 
     @marking.setter
     def marking(self, value):
         self._marking = value
-
-    @isWin.setter
-    def isWin(self, value):
-        self._isWin = value
 
     @isTurn.setter
     def isTurn(self, value):
