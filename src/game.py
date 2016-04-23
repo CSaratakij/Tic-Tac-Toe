@@ -6,7 +6,6 @@ class Game:
         self._isStart = False
         self._isOver = False
         self._lstPlayer = []
-        self._lstAvailableChoice = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
 
 
     @property
@@ -20,16 +19,36 @@ class Game:
     @property
     def lstPlayer(self):
         return self._lstPlayer
-     
-    @property
-    def lstAvailableChoice(self):
-        return self._lstAvailableChoice
+
+
+    def check_winner(self):
+        raise NotImplementedError("Please implement this method.")
 
 
     def add_player(self, lstPlayer):
         
         for player in lstPlayer:
             self._lstPlayer.append(player)
+
+
+    def start(self):
+        self._isStart = True
+
+
+    def over(self):
+        self._isOver = True
+
+
+class TicTacToeGame(Game):
+
+    def __init__(self):
+        super().__init__()
+        self._lstAvailableChoice = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+
+
+    @property
+    def lstAvailableChoice(self):
+        return self._lstAvailableChoice
 
 
     def is_all_in(self, lstExpect, lstNum):
@@ -73,14 +92,6 @@ class Game:
 
             elif (self.is_all_in( [ 3, 5, 7 ], player.lstSelectedNum )):
                 player.win()
-
-
-    def start(self):
-        self._isStart = True
-
-
-    def over(self):
-        self._isOver = True
 
 
 class Player:
@@ -134,6 +145,10 @@ class Player:
 
 
 class Bot(Player):
+
+    def __init__(self, name, marking):
+        super().__init__(name, marking)
+
 
     def random_pick(self, lstNum):
 

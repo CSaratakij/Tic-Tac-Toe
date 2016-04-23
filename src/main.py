@@ -3,7 +3,7 @@ import kivy
 
 kivy.require("1.9.1")
 
-from game import Game
+from game import TicTacToeGame
 from game import Player
 from game import Bot
 
@@ -16,11 +16,11 @@ from kivy.uix.button import Button
 from kivy.uix.popup import Popup
 
 
-class TicTacToeGame(Widget):
+class SinglePlayerView(Widget):
 
 	dictIndexToButtonName = { 1: "btn1", 2: "btn2", 3: "btn3", 4: "btn4", 5: "btn5", 6: "btn6", 7: "btn7", 8: "btn8", 9: "btn9" }
 	
-	game = Game()
+	game = TicTacToeGame()
 	player = Player("Player", "X")
 	enemy = Bot("Computer", "O")
 	
@@ -44,7 +44,7 @@ class TicTacToeGame(Widget):
 		
 	def restart_game(self, btn):
 		
-		self.game = Game()
+		self.game = TicTacToeGame()
 		self.player = Player("Player", "X")
 		self.enemy = Bot("Enemy", "O")
 		
@@ -188,7 +188,7 @@ class TicTacToeApp(App):
 		Config.set("kivy", "exit_on_escape", 0)
 		Config.write()
 		
-		return TicTacToeGame()
+		return SinglePlayerView()
 
 
 if __name__ == "__main__":
