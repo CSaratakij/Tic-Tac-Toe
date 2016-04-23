@@ -6,7 +6,7 @@ Simple Tic-Tac-Toe with Kivy
 
 
 ##Important
-Window
+####Window
 - Kivy doesn't support Python3.5 for now. [More Info](https://kivy.org/docs/installation/installation-windows.html#install-win-dist)
 
 
