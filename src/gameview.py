@@ -1,12 +1,11 @@
 import game
 import kivy
 
-kivy.require("1.9.1")
-
 
 from game import TicTacToeGame
 from game import Player
 from game import Bot
+
 
 from kivy.app import App
 from kivy.uix.widget import Widget
