@@ -1,14 +1,14 @@
-import gameview
 import kivy
+import lib
 
 kivy.require("1.9.1")
 
 
-from gameview import SinglePlayerView
-
-
 from kivy.app import App
 from kivy.config import Config
+
+
+from lib.view.singleplayerview import SinglePlayerView
 
 
 class TicTacToeApp(App):

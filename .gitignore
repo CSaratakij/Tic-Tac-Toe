@@ -1,1 +1,2 @@
-src/__pycache__/
+src/lib/game/__pycache__/
+src/lib/view/__pycache__/

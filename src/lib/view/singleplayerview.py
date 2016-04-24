@@ -1,10 +1,5 @@
-import game
 import kivy
-
-
-from game import TicTacToeGame
-from game import Player
-from game import Bot
+import lib
 
 
 from kivy.app import App
@@ -13,6 +8,11 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 from kivy.uix.button import Button
 from kivy.uix.popup import Popup
+
+
+from lib.game.tictactoegame import TicTacToeGame
+from lib.game.player import Player
+from lib.game.bot import Bot
 
 
 class SinglePlayerView(Widget):
