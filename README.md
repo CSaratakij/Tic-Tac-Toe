@@ -30,7 +30,7 @@ Simple Tic-Tac-Toe with Kivy
 
 ##To run this program :
 ```
-python main.py`
+python main.py
 ```
 
 
