@@ -35,7 +35,7 @@ python main.py
 
 
 ##TODO
-- [ ] Add sounds
+- [x] Add sounds
 - [ ] Skin UI
 - [x] Single Player
 - [ ] Local Multiplayer
