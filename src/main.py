@@ -14,7 +14,7 @@ from lib.view.singleplayerview import SinglePlayerView
 class TicTacToeApp(App):
 
 	title = "Tic-Tac-Toe"
-	icon = "icon.ico"
+	icon = "assets/icon.ico"
 	
 	def build(self):
 	

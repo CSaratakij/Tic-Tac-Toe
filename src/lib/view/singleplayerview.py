@@ -3,6 +3,7 @@ import lib
 
 
 from kivy.app import App
+from kivy.core.audio import SoundLoader
 from kivy.uix.widget import Widget
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
@@ -18,6 +19,8 @@ from lib.game.bot import Bot
 class SinglePlayerView(Widget):
 
 	dictIndexToButtonName = { 1: "btn1", 2: "btn2", 3: "btn3", 4: "btn4", 5: "btn5", 6: "btn6", 7: "btn7", 8: "btn8", 9: "btn9" }
+	
+	soundClick = SoundLoader.load("assets/menu_selection_click.ogg")
 	
 	game = TicTacToeGame()
 	player = Player("Player", "X")
@@ -57,6 +60,10 @@ class SinglePlayerView(Widget):
 
 
 	def button_press(self, btn):
+		
+		if (self.soundClick):
+			self.soundClick.play()
+		
 		
 		if (not self.game.isOver and self.player.isTurn):
 			
@@ -171,4 +178,3 @@ class SinglePlayerView(Widget):
 			
 			dlgGameOver.content = boxLayout
 			dlgGameOver.open()
-			
