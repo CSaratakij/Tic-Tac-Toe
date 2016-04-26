@@ -15,16 +15,19 @@ class TicTacToeApp(App):
 
 	title = "Tic-Tac-Toe"
 	icon = "assets/icon.ico"
-	
-	def build(self):
-	
+
+
+	def init_config(self):
 		Config.set("graphics", "fullscreen", 0)
 		Config.set("graphics", "resizable", 0)
 		Config.set("graphics", "height", 600)
 		Config.set("graphics", "width", 600)
 		Config.set("kivy", "exit_on_escape", 0)
 		Config.write()
-		
+
+
+	def build(self):
+		self.init_config()
 		return SinglePlayerView()
 
 
