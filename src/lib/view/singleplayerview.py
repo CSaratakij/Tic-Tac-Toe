@@ -65,53 +65,57 @@ class SinglePlayerView(Widget):
 			self.soundClick.play()
 		
 		
-		if (not self.game.isOver and self.player.isTurn):
+		if (not self.game.isOver):
 			
-			selectedNum = 0
-			totalButton = len(self.dictIndexToButtonName)
-			
-			for index in range(1, totalButton + 1):
-				if (btn == self.ids[ self.dictIndexToButtonName[index] ]):
-					selectedNum = index
-					break
-
-
-			self.player.pick(selectedNum)
-			self.game.remove_choice(selectedNum)
-			
-			btn.text = self.player.marking
-			btn.disabled = True
-			
-			
-			self.game.check_winner()
-			
-			
-			if (self.game.isHasWinner or len(self.game.lstAvailableChoice) == 0):
-				self.game.over()
-
-
-			self.game.next_turn()
-
-
-		if (not self.game.isOver and self.enemy.isTurn):
-			selectedNum = self.enemy.get_random_from(self.game.lstAvailableChoice)
-
-			if (selectedNum > 0):
-				self.enemy.pick(selectedNum)
-				self.game.remove_choice(selectedNum)
+			if (self.player.isTurn):
 				
-				self.ids[ self.dictIndexToButtonName[selectedNum] ].text = self.enemy.marking
-				self.ids[ self.dictIndexToButtonName[selectedNum] ].disabled = True
+				selectedNum = 0
+				totalButton = len(self.dictIndexToButtonName)
+			
+				for index in range(1, totalButton + 1):
+					if (btn == self.ids[ self.dictIndexToButtonName[index] ]):
+						selectedNum = index
+						break
+
+
+				self.player.pick(selectedNum)
+				self.game.remove_choice(selectedNum)
+			
+				btn.text = self.player.marking
+				btn.disabled = True
 			
 			
-			self.game.check_winner()
+				self.game.check_winner()
+			
+			
+				if (self.game.isHasWinner or len(self.game.lstAvailableChoice) == 0):
+					self.game.over()
 
 
-			if (self.game.isHasWinner or len(self.game.lstAvailableChoice) == 0):
-				self.game.over()
+				self.game.next_turn()
 
 
-			self.game.next_turn()
+			if (self.enemy.isTurn):
+			
+				selectedNum = self.enemy.get_random_from(self.game.lstAvailableChoice)
+
+				if (selectedNum > 0):
+					
+					self.enemy.pick(selectedNum)
+					self.game.remove_choice(selectedNum)
+				
+					self.ids[ self.dictIndexToButtonName[selectedNum] ].text = self.enemy.marking
+					self.ids[ self.dictIndexToButtonName[selectedNum] ].disabled = True
+			
+			
+				self.game.check_winner()
+
+
+				if (self.game.isHasWinner or len(self.game.lstAvailableChoice) == 0):
+					self.game.over()
+
+
+				self.game.next_turn()
 
 
 	def button_release(self, btn):
