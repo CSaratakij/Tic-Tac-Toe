@@ -11,7 +11,7 @@ class Bot(Player):
         super().__init__(name, marking)
 
 
-    def random_pick(self, lstNum):
+    def get_random_from(self, lstNum):
 
         randomNum = 0
 

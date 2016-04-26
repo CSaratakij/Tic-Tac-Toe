@@ -37,12 +37,18 @@ class Player:
     def isTurn(self, value):
         self._isTurn = value
 
+    
+    def pick(self, value):
+        self._lstSelectedNum.append(value)
+
 
     def start_first(self):
         self._isTurn = True
 
+
     def win(self):
         self._isWin = True
+
 
     def lose(self):
         self._isWin = False

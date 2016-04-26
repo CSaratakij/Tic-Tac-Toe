@@ -68,37 +68,16 @@ class SinglePlayerView(Widget):
 		if (not self.game.isOver and self.player.isTurn):
 			
 			selectedNum = 0
-		
-			if (btn == self.ids[ self.dictIndexToButtonName[1] ]):
-				selectedNum = 1
-		
-			elif (btn == self.ids[ self.dictIndexToButtonName[2] ]):
-				selectedNum = 2
+			totalButton = len(self.dictIndexToButtonName)
 			
-			elif (btn == self.ids[ self.dictIndexToButtonName[3] ]):
-				selectedNum = 3
-		
-			elif (btn == self.ids[ self.dictIndexToButtonName[4] ]):
-				selectedNum = 4
-		
-			elif (btn == self.ids[ self.dictIndexToButtonName[5] ]):
-				selectedNum = 5
-		
-			elif (btn == self.ids[ self.dictIndexToButtonName[6] ]):
-				selectedNum = 6
-		
-			elif (btn == self.ids[ self.dictIndexToButtonName[7] ]):
-				selectedNum = 7
-		
-			elif (btn == self.ids[ self.dictIndexToButtonName[8] ]):
-				selectedNum = 8
-		
-			elif (btn == self.ids[ self.dictIndexToButtonName[9] ]):
-				selectedNum = 9
+			for index in range(1, totalButton + 1):
+				if (btn == self.ids[ self.dictIndexToButtonName[index] ]):
+					selectedNum = index
+					break
 
 
-			self.player.lstSelectedNum.append(selectedNum)
-			self.game.lstAvailableChoice.remove(selectedNum)
+			self.player.pick(selectedNum)
+			self.game.remove_choice(selectedNum)
 			
 			btn.text = self.player.marking
 			btn.disabled = True
@@ -107,34 +86,32 @@ class SinglePlayerView(Widget):
 			self.game.check_winner()
 			
 			
-			if (self.player.isWin or self.enemy.isWin or len(self.game.lstAvailableChoice) == 0):
+			if (self.game.isHasWinner or len(self.game.lstAvailableChoice) == 0):
 				self.game.over()
 
 
-			self.player.isTurn = False
-			self.enemy.isTurn = True
+			self.game.next_turn()
 
 
 		if (not self.game.isOver and self.enemy.isTurn):
-			selectedNum = self.enemy.random_pick(self.game.lstAvailableChoice)
+			selectedNum = self.enemy.get_random_from(self.game.lstAvailableChoice)
 
 			if (selectedNum > 0):
-				self.enemy.lstSelectedNum.append(selectedNum)
-				self.game.lstAvailableChoice.remove(selectedNum)
+				self.enemy.pick(selectedNum)
+				self.game.remove_choice(selectedNum)
 				
 				self.ids[ self.dictIndexToButtonName[selectedNum] ].text = self.enemy.marking
 				self.ids[ self.dictIndexToButtonName[selectedNum] ].disabled = True
 			
 			
 			self.game.check_winner()
-			
-			
-			if (self.player.isWin or self.enemy.isWin or len(self.game.lstAvailableChoice) == 0):
+
+
+			if (self.game.isHasWinner or len(self.game.lstAvailableChoice) == 0):
 				self.game.over()
-			
-			
-			self.enemy.isTurn = False
-			self.player.isTurn = True
+
+
+			self.game.next_turn()
 
 
 	def button_release(self, btn):
@@ -151,8 +128,9 @@ class SinglePlayerView(Widget):
 					auto_dismiss = False)
 
 
-			lblWinner = Label(text = "Winner is : ")
-
+			lblWinner = Label(text = "Winner : ")
+			lblWinner.font_size = 24
+			
 			btnRestart = Button(text = "Restart")
 			btnRestart.bind(on_press = self.restart_game)
 			btnRestart.bind(on_release = dlgGameOver.dismiss)
@@ -163,14 +141,14 @@ class SinglePlayerView(Widget):
 			
 			
 			if (self.player.isWin):
-				lblWinner.text += "Player."
+				lblWinner.text += "Player"
 				
 			elif (self.enemy.isWin):
-				lblWinner.text += "Computer."
+				lblWinner.text += "Computer"
 				
 			else:
-				lblWinner.text = "This game is Tie."
-
+				lblWinner.text = "Tie"
+			
 			
 			boxLayout.add_widget(lblWinner)
 			boxLayout.add_widget(btnRestart)
