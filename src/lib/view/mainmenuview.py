@@ -6,9 +6,6 @@ from kivy.app import App
 from kivy.uix.screenmanager import Screen
 
 
-from lib.view.singleplayerview import SinglePlayerView
-
-
 class MainMenuView(Screen):
 
     def btnPlay_release(self, btn):
