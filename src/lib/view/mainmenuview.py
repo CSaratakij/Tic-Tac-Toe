@@ -1,5 +1,4 @@
 import kivy
-import lib
 
 
 from kivy.app import App
