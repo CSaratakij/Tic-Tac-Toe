@@ -22,7 +22,7 @@ class LocalMultiplayerView(Screen):
 	
 	game = TicTacToeGame()
 	player1 = Player("Player1", "X")
-	player2 = Player("Computer", "O")
+	player2 = Player("Player2", "O")
 	
 	game.add_player( [player1, player2] )
 	
