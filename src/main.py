@@ -13,6 +13,8 @@ from kivy.uix.screenmanager import WipeTransition
 
 from lib.view.mainmenuview import MainMenuView
 from lib.view.singleplayerview import SinglePlayerView
+from lib.view.multiplayeroptionview import MultiplayerOptionView
+from lib.view.localmultiplayerview import LocalMultiplayerView
 
 
 class TicTacToeApp(App):
@@ -23,8 +25,12 @@ class TicTacToeApp(App):
 
 	def init_screen(self):
 		screenManager = ScreenManager(transition = WipeTransition())
+		
 		screenManager.add_widget(MainMenuView(name = "mainmenu"))
-		screenManager.add_widget(SinglePlayerView(name = "singleplayer"))
+		screenManager.add_widget(SinglePlayerView(name = "singleplayer-gameplay"))
+		screenManager.add_widget(MultiplayerOptionView(name = "multiplayer-option"))
+		screenManager.add_widget(LocalMultiplayerView(name = "localmultiplayer-gameplay"))
+		
 		return screenManager
 
 

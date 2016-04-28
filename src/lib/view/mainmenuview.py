@@ -7,8 +7,12 @@ from kivy.uix.screenmanager import Screen
 
 class MainMenuView(Screen):
 
-    def btnPlay_release(self, btn):
-        self.manager.current = "singleplayer"
+    def btnSinglePlayer_release(self, btn):
+        self.manager.current = "singleplayer-gameplay"
+
+
+    def btnMultiplayerOption_release(self, btn):
+        self.manager.current = "multiplayer-option"
 
 
     def btnExit_release(self, btn):

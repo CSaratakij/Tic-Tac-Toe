@@ -38,7 +38,7 @@ python main.py
 - [x] Add sounds
 - [ ] Skin UI
 - [x] Single Player
-- [ ] Local Multiplayer
+- [x] Local Multiplayer
 - [ ] Online Multiplayer
 
 
