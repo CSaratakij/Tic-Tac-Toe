@@ -40,6 +40,7 @@ class TicTacToeApp(App):
 		Config.set("graphics", "height", 600)
 		Config.set("graphics", "width", 600)
 		Config.set("kivy", "exit_on_escape", 0)
+		Config.set("input", "mouse", "mouse,multitouch_on_demand")
 		Config.write()
 
 
