@@ -1,15 +1,12 @@
+#!/usr/bin/env python3
+
 import kivy
-import lib
-
 kivy.require("1.9.1")
-
 
 from kivy.app import App
 from kivy.config import Config
-from kivy.uix.screenmanager import Screen
 from kivy.uix.screenmanager import ScreenManager
 from kivy.uix.screenmanager import WipeTransition
-
 
 from lib.view.mainmenuview import MainMenuView
 from lib.view.singleplayerview import SinglePlayerView
@@ -25,12 +22,10 @@ class TicTacToeApp(App):
 
 	def init_screen(self):
 		screenManager = ScreenManager(transition = WipeTransition())
-		
 		screenManager.add_widget(MainMenuView(name = "mainmenu"))
 		screenManager.add_widget(SinglePlayerView(name = "singleplayer-gameplay"))
 		screenManager.add_widget(MultiplayerOptionView(name = "multiplayer-option"))
 		screenManager.add_widget(LocalMultiplayerView(name = "localmultiplayer-gameplay"))
-		
 		return screenManager
 
 
