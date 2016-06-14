@@ -28,21 +28,21 @@
 <MainMenuView>:
     BoxLayout:
         orientation: "vertical"
-        
+
         MainMenuButton:
             id: btnSinglePlayer
             text: "Singleplayer"
-            on_release: root.btnSinglePlayer_release(btnSinglePlayer)
-            
+            on_release: root.btnSinglePlayer_release()
+
         MainMenuButton:
             id: btnMultiplayerOption
             text: "Multiplayer"
-            on_release: root.btnMultiplayerOption_release(btnMultiplayerOption)
-            
+            on_release: root.btnMultiplayerOption_release()
+
         MainMenuButton:
             id: btnExit
             text: "Exit"
-            on_release: root.btnExit_release(btnExit)
+            on_release: root.btnExit_release()
 
 
 <SinglePlayerView>:
@@ -51,17 +51,17 @@
             id: btn1
             on_press: root.btnGame_press(btn1)
             on_release: root.btnGame_release(btn1)
-            
+
         GameButton:
             id: btn2
             on_press: root.btnGame_press(btn2)
             on_release: root.btnGame_release(btn2)
-            
+
         GameButton:
             id: btn3
             on_press: root.btnGame_press(btn3)
             on_release: root.btnGame_release(btn3)
-            
+
         GameButton:
             id: btn4
             on_press: root.btnGame_press(btn4)
@@ -71,7 +71,7 @@
             id: btn5
             on_press: root.btnGame_press(btn5)
             on_release: root.btnGame_release(btn5)
-            
+
         GameButton:
             id: btn6
             on_press: root.btnGame_press(btn6)
@@ -81,12 +81,12 @@
             id: btn7
             on_press: root.btnGame_press(btn7)
             on_release: root.btnGame_release(btn7)
-            
+
         GameButton:
             id: btn8
             on_press: root.btnGame_press(btn8)
             on_release: root.btnGame_release(btn8)
-            
+
         GameButton:
             id: btn9
             on_press: root.btnGame_press(btn9)
@@ -96,24 +96,24 @@
 <MultiplayerOptionView>
     BoxLayout:
         orientation: "horizontal"
-        
+
         MultiplayerOptionButton:
             id: btnLocalMultiplayer
             text: "Local"
-            on_release: root.btnLocalMultiplayer_release(btnLocalMultiplayer)
-            
+            on_release: root.btnLocalMultiplayer_release()
+
         MultiplayerOptionButton:
             id: btnOnlineMultiplayer
             text: "Online(Coming Soon!)"
             font_size: 20
-            on_release: root.btnOnlineMultiplayer_release(btnOnlineMultiplayer)
-            
+            on_release: root.btnOnlineMultiplayer_release()
+
         MultiplayerOptionButton:
             id: btnBack
             text: "Back"
             size_hint: None, None
             height: root.height
-            on_release: root.btnBack_release(btnBack)
+            on_release: root.btnBack_release()
 
 
 <LocalMultiplayerView>:
@@ -122,17 +122,17 @@
             id: btn1
             on_press: root.btnGame_press(btn1)
             on_release: root.btnGame_release(btn1)
-            
+
         GameButton:
             id: btn2
             on_press: root.btnGame_press(btn2)
             on_release: root.btnGame_release(btn2)
-            
+
         GameButton:
             id: btn3
             on_press: root.btnGame_press(btn3)
             on_release: root.btnGame_release(btn3)
-            
+
         GameButton:
             id: btn4
             on_press: root.btnGame_press(btn4)
@@ -142,7 +142,7 @@
             id: btn5
             on_press: root.btnGame_press(btn5)
             on_release: root.btnGame_release(btn5)
-            
+
         GameButton:
             id: btn6
             on_press: root.btnGame_press(btn6)
@@ -152,12 +152,12 @@
             id: btn7
             on_press: root.btnGame_press(btn7)
             on_release: root.btnGame_release(btn7)
-            
+
         GameButton:
             id: btn8
             on_press: root.btnGame_press(btn8)
             on_release: root.btnGame_release(btn8)
-            
+
         GameButton:
             id: btn9
             on_press: root.btnGame_press(btn9)
